@@ -1,0 +1,39 @@
+@import "/src/sass/root";
+
+.nav {
+	width: 60%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	row-gap: 24px;
+
+	padding: 20px;
+}
+
+.link {
+	position: relative;
+
+	font-family: $fontFamily;
+	font-size: 40px;
+	font-weight: bold;
+	text-align: center;
+
+	&::before {
+		content: "";
+
+		position: absolute;
+
+		bottom: -5px;
+		height: 3px;
+		width: 0;
+		background-color: $color;
+
+		transition-property: width;
+		transition-duration: 250ms;
+		transition-timing-function: $transTimeFunction;
+	}
+
+	&:hover::before {
+		width: 100%;
+	}
+}
