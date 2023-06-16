@@ -1,0 +1,83 @@
+@import-normalize;
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700&display=swap");
+
+@import "./sass/root";
+@import "./sass/animations";
+
+* {
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	list-style: none;
+}
+
+body {
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+		"Droid Sans", "Helvetica Neue", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	background-color: $backgroundColor;
+	color: $color;
+
+	font-family: $fontFamily;
+
+	padding: 0 15px;
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn {
+	display: inline-block;
+	padding: 10px 20px;
+
+	border: none;
+	border-radius: 20px;
+
+	background-color: $accentColor;
+
+	color: $color;
+	font-weight: 600;
+	transition: background-color $transDuration $transTimeFunction;
+
+	cursor: pointer;
+
+	&:hover {
+		background-color: rgb(42, 2, 153);
+	}
+
+	&:disabled,
+	&:disabled:active {
+		cursor: default;
+		background-color: grey;
+		color: rgb(177, 190, 190);
+	}
+
+	&:active {
+		background-color: rgb(27, 0, 100);
+	}
+}
