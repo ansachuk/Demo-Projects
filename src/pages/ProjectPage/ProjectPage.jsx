@@ -1,3 +1,4 @@
+import BackLink from "components/BackLink/BackLink";
 import { useParams } from "react-router-dom";
 
 import checkCurrentProject from "utils/checkCurrentProject";
@@ -7,5 +8,10 @@ export default function ProjectPage() {
 
 	const currentProject = checkCurrentProject(projectName);
 
-	return <>{currentProject}</>;
+	return (
+		<>
+			<BackLink />
+			<main>{currentProject}</main>
+		</>
+	);
 }

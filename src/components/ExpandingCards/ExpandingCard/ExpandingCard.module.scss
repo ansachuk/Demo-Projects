@@ -1,0 +1,48 @@
+@import "/src/sass/root";
+
+.item {
+	position: relative;
+	flex-basis: 100px;
+
+	cursor: pointer;
+
+	transition-property: flex-grow;
+	transition-duration: $transDuration * 2;
+	transition-timing-function: $transTimeFunction;
+
+	&:hover {
+		flex-grow: 1;
+
+		p {
+			opacity: 1;
+		}
+	}
+
+	p {
+		position: absolute;
+		bottom: 50px;
+		left: 50px;
+
+		text-transform: capitalize;
+		font-size: 24px;
+		font-weight: 900;
+
+		opacity: 0;
+
+		transition-property: opacity;
+		transition-duration: $transDuration * 2;
+		transition-timing-function: $transTimeFunction;
+	}
+
+	img {
+		border-radius: 25px;
+
+		height: 700px;
+
+		object-fit: cover;
+
+		color: rgb(0, 34, 63);
+
+		box-shadow: 0 60px 80px rgba(0, 34, 63, 0.6), 0 45px 26px rgba(0, 34, 63, 0.14);
+	}
+}
