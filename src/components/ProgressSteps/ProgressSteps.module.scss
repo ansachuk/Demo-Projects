@@ -1,0 +1,88 @@
+@import "/src/sass/root";
+
+.list {
+	margin: 200px auto 50px;
+
+	display: flex;
+	justify-content: center;
+	gap: 50px;
+}
+
+.item {
+	position: relative;
+
+	width: 50px;
+	height: 50px;
+
+	font-weight: bold;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	border: 3px solid $color;
+	border-radius: 50%;
+
+	transition-property: border-color;
+	transition-duration: $transDuration;
+	transition-timing-function: $transTimeFunction;
+
+	&:not(:first-child)::after {
+		content: "";
+		position: absolute;
+		bottom: 20px;
+		right: 52px;
+		height: 3px;
+		width: 51px;
+		background-color: $color;
+
+		transition-property: background-color, width;
+		transition-duration: $transDuration;
+		transition-timing-function: $transTimeFunction;
+	}
+
+	&.active {
+		border-color: rgb(1, 117, 211);
+
+		&:not(:first-child)::after {
+			background-color: rgb(1, 117, 211);
+		}
+	}
+}
+
+.wrapper {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+}
+
+.button {
+	display: inline-block;
+	padding: 10px 20px;
+
+	border: none;
+	border-radius: 20px;
+
+	background-color: $accentColor;
+
+	color: $color;
+	font-weight: 600;
+	transition: background-color $transDuration $transTimeFunction;
+
+	cursor: pointer;
+
+	&:hover {
+		background-color: rgb(42, 2, 153);
+	}
+
+	&:disabled,
+	&:disabled:active {
+		cursor: default;
+		background-color: grey;
+		color: rgb(177, 190, 190);
+	}
+
+	&:active {
+		background-color: rgb(27, 0, 100);
+	}
+}

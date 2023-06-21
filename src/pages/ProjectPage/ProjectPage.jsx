@@ -1,5 +1,5 @@
-import BackLink from "components/BackLink/BackLink";
 import { useParams } from "react-router-dom";
+import BackLink from "components/BackLink/BackLink";
 
 import checkCurrentProject from "utils/checkCurrentProject";
 
