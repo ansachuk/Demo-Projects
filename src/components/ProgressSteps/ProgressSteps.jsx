@@ -2,33 +2,54 @@ import { useRef, useState } from "react";
 import css from "./ProgressSteps.module.scss";
 
 export default function ProgressSteps() {
-	const [currentIndex, setCurrentIndex] = useState(0);
-	const prevButtonsRef = useRef();
-	const nextButtonsRef = useRef();
+	const [currentIndex, setCurrentIndex] = useState(1);
+
+	const prevBtnRef = useRef();
+	const nextBtnRef = useRef();
 
 	// const ACTIVE_CLASS = "steps_active";
 
-	function prevStepButtonClickHandler() {
-		nextButtonsRef.removeAttribute("disabled");
+	// function onButtonClick(e) {
+	// 	const btn = e.currentTarget;
+
+	// 	if (btn.dataset.action === "next") {
+	// 		setCurrentIndex(prev => prev + 1);
+
+	// 		if (currentIndex === 4) {
+	// 			nextBtnRef.setAttribute("disabled", "true");
+	// 		}
+	// 	} else {
+	// 		setCurrentIndex(prev => prev - 1);
+
+	// 		if (currentIndex === 1) {
+	// 			prevBtnRef.setAttribute("disabled", "true");
+	// 		}
+	// 	}
+	// }
+
+	function onPrevClick() {
+		nextBtnRef.current.removeAttribute("disabled");
+
+		// debugger;
 
 		// stepsRef[currentActiveStepIndex].classList.remove(ACTIVE_CLASS);
 		setCurrentIndex(prev => prev - 1);
 
 		if (currentIndex === 0) {
-			prevButtonsRef.setAttribute("disabled", "true");
+			prevBtnRef.current.setAttribute("disabled", "true");
 			return;
 		}
 	}
 
-	function nextStepButtonClickHandler() {
-		prevButtonsRef.removeAttribute("disabled");
+	function onNextClick() {
+		prevBtnRef.current.removeAttribute("disabled");
 
 		setCurrentIndex(prev => prev + 1);
 
 		// stepsRef[currentActiveStepIndex].classList.add(ACTIVE_CLASS);
 
-		if (currentIndex === stepsRef.length - 1) {
-			nextButtonsRef.setAttribute("disabled", "true");
+		if (currentIndex === 3) {
+			nextBtnRef.current.setAttribute("disabled", "true");
 			return;
 		}
 	}
@@ -45,10 +66,10 @@ export default function ProgressSteps() {
 				{/* You can add <li>. This will work if screen width allow */}
 			</ul>
 			<div className={css.wrapper}>
-				<button className={css.button} onClick={prevStepButtonClickHandler} data-action="prev" disabled>
+				<button ref={prevBtnRef} className={css.button} onClick={onPrevClick} data-action="prev">
 					Prev
 				</button>
-				<button className={css.button} onClick={nextStepButtonClickHandler} data-action="next">
+				<button ref={nextBtnRef} className={css.button} onClick={onNextClick} data-action="next">
 					Next
 				</button>
 			</div>

@@ -27,7 +27,7 @@
 	transition-duration: $transDuration;
 	transition-timing-function: $transTimeFunction;
 
-	&:not(:first-child)::after {
+	&:not(:first-child)::before {
 		content: "";
 		position: absolute;
 		bottom: 20px;
@@ -44,7 +44,7 @@
 	&.active {
 		border-color: rgb(1, 117, 211);
 
-		&:not(:first-child)::after {
+		&:not(:first-child)::before {
 			background-color: rgb(1, 117, 211);
 		}
 	}
