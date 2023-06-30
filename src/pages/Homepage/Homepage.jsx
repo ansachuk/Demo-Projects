@@ -6,6 +6,8 @@ import projectsData from "data/projectsData";
 import css from "./Homepage.module.scss";
 
 export default function Homepage() {
+	document.title = "Demo projects";
+
 	return (
 		<main>
 			<ColorizedTitle title="welcome"></ColorizedTitle>

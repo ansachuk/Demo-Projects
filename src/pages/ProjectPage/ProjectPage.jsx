@@ -6,6 +6,8 @@ import checkCurrentProject from "utils/checkCurrentProject";
 export default function ProjectPage() {
 	const projectName = useParams("projectName").projectName.split("-").join(" ");
 
+	document.title = projectName;
+
 	const currentProject = checkCurrentProject(projectName);
 
 	return (
