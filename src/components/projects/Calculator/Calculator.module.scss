@@ -1,0 +1,132 @@
+.calculator {
+	display: inline-block;
+	background-color: rgb(29, 28, 28);
+	font-family: "Courier New", Courier, monospace;
+	font-weight: bold;
+
+	width: 100%;
+}
+
+button {
+	font-family: "Courier New", Courier, monospace;
+	font-weight: bold;
+}
+
+.wrapper__output {
+	text-align: center;
+
+	.output {
+		color: aqua;
+		text-transform: uppercase;
+	}
+}
+
+.calc {
+	// width: 100%;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 40px;
+
+	&__main {
+		&Wrapper {
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			margin-bottom: 5px;
+		}
+
+		&Option {
+			display: flex;
+			flex-direction: column;
+
+			margin-left: 10px;
+
+			button {
+				background-color: rgb(0, 202, 171);
+				margin-bottom: 2px;
+				padding: 10px;
+
+				height: 33%;
+
+				border: none;
+				border-radius: 40%;
+
+				cursor: pointer;
+
+				transition: background-color 250ms ease-in-out;
+
+				&:hover {
+					background-color: rgb(0, 123, 104);
+				}
+			}
+		}
+	}
+
+	&__numbers {
+		display: flex;
+		flex-wrap: wrap;
+		// justify-content: space-between;
+		gap: 1px;
+
+		button {
+			background-color: #ffae00;
+			color: whitesmoke;
+			flex-basis: calc((100% - 2px) / 3);
+			height: calc((100% - 2px) / 3);
+
+			border: 1px solid transparent;
+			border-radius: 25px;
+
+			cursor: pointer;
+
+			transition: background-color 250ms ease-in-out;
+
+			&:hover {
+				background-color: #996900;
+			}
+		}
+	}
+
+	&__bottomOption {
+		display: flex;
+		gap: 1px;
+
+		width: 45%;
+		margin: 0 auto;
+
+		button {
+			height: 33px;
+			width: 25%;
+			border: none;
+			border-radius: 10px;
+			background-color: rgb(111, 111, 111);
+
+			transition: background-color 250ms ease-in-out;
+
+			cursor: pointer;
+
+			&:hover {
+				background-color: rgb(88, 42, 42);
+			}
+		}
+	}
+}
+
+.clear {
+	display: block;
+	margin: 0 auto;
+	padding: 5px 10px;
+	border: none;
+	border-radius: 10px;
+	background-color: darkkhaki;
+
+	cursor: pointer;
+
+	transition: background-color 250ms ease-in-out;
+
+	&:hover {
+		background-color: rgb(114, 111, 67);
+	}
+}
