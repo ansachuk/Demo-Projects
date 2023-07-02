@@ -3,7 +3,9 @@ import css from "./Calculator.module.scss";
 import { useState } from "react";
 
 export default function Calculator() {
-	const [output, setOutput] = useState(0);
+	const [output] = useState(0);
+  //const [output, setOutput] = useState(0);
+  //TODO: ProggressSTeps make as vocabulary {1:true,2:false,etc...}
 	return (
 		<div className={css.calculator}>
 			<div className={css.wrapper__output}>
