@@ -1,6 +1,6 @@
 # Demo Projects by Andrii🥷🏼
 
-## DEPRECATED
+## DEPRECATED!
 
 Welcome to my GitHub repository where I showcase my demo projects as a beginner
 frontend developer. My name is Andrii, and I am passionate about creating
